@@ -1,4 +1,4 @@
 *.*~
-sbc-template.aux
-sbc-template.log
-sbc-template.pdf
+*.aux
+*.log
+*.pdf
