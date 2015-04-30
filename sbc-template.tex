@@ -76,6 +76,20 @@ com agilidade os alunos continuam na fila perdendo tempo inutilmente. Além de do
 e poderem, futuramente, cobrar seus direitos perante a Pro-Reitoria responsável, desta vez, contando
 com dados mais palpáveis.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.7\textwidth]{home.png}
+\caption{Esboço da interface do sistema voltado para smarthphones.}
+\label{fig:mobilefig}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.7\textwidth]{mockup.png}
+\caption{Esboço da interface do sistema web.}
+\label{fig:webfig}
+\end{figure}
+
 \section{Requisitos}
 
 Requisitos funcionais
@@ -125,11 +139,14 @@ O usuário deve ser capaz de replicar o status informado por outro usuário, refor
 \newpage
 \section{Arquitetura}
 
+A arquitetura do sistema é divida em três camadas (fig.\ref{fig:arqfig}). Sendo a responsabilidade da primeira camada, a gerência da lógica da interface. A segunda é a camada de business, que 
+contém as regras de negócio das funcionalidades do sistema. E por fim, temos a camada persitance, que atua como intermediário entre a aplicação e a base de dados.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.7\textwidth]{arquitetura.png}
 \caption{Arquitetura em três camadas do sistema.}
-\label{fig:exampleFig2}
+\label{fig:arqfig}
 \end{figure}
 
 \section{Casos de uso}
