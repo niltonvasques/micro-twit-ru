@@ -90,7 +90,7 @@ Deve ser disponibilizado uma tela de login, onde o usuário possa se autenticar n
 Deve ser possível a um usuário logado no sistema, a possibilidade de editar seu próprio perfil.
 
 4 -  Informar status do RU:
-Deve estar disponível para um usuário logado a possibilidade de informar um novo status do RU, dentre os listados na lista x.x. 
+Deve estar disponível para um usuário logado a possibilidade de informar um novo status do RU, dentre os listados na lista abaixo. 
 
 \begin{enumerate}
 
@@ -117,15 +117,20 @@ Deve estar disponível para um usuário logado a possibilidade de informar um novo
 \end{enumerate}
 
 4 -  Visualizar status do RU:
-Deve estar disponível para um usuário logado a possibilidade de informar um novo status do RU, dentre os listados na lista x.x. 
+Deve estar disponível para um usuário logado a possibilidade de visualizar os status informados pelos demais usuários do sistema. 
 
-%Como Usuário gostaria de visualizar Status postados por outros usuários
-%
-%Como Usuário gostaria de replicar um Status postado por outro usuário
+5 -  Replicar status de outro usuário:
+O usuário deve ser capaz de replicar o status informado por outro usuário, reforçando assim a relevância daquele status no sistema.
 
+\newpage
 \section{Arquitetura}
 
-The subsection titles must be in boldface, 12pt, flush left.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.7\textwidth]{arquitetura.png}
+\caption{Arquitetura em três camadas do sistema.}
+\label{fig:exampleFig2}
+\end{figure}
 
 \section{Casos de uso}
 
@@ -134,7 +139,7 @@ The subsection titles must be in boldface, 12pt, flush left.
 \textbf{Precondições:} O usuário deve possuir um e-mail \\
 \textbf{Descrição:} O usuário se cadastra no sistema para poder utilizá-lo plenamente.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O usuário clica em cadastrar-se
@@ -147,28 +152,28 @@ Fluxo Normal
 \textbf{Precondições:} O usuário deve possuir cadastro no sistema \\
 \textbf{Descrição:} O usuário faz login com o seu cadastro no sistema, para poder utilizá-lo plenamente.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O usuário aperta em Entrar
   \item O usuário preenche os campos de e-mail e senha
   \item O usuário aperta em Login
 
-Fluxo de Excessão E1.
-  \begin{enumerate}
-    \item Sistema reconhece as informações como inválidas e avisa ao usuário
-  Retorna ao passo 2 do fluxo normal
-  \end{enumerate}
 \end{enumerate}
 
 
+\textbf{Fluxo de Excessão E1.}
+\begin{enumerate}
+  \item [4.1] Sistema reconhece as informações como inválidas e avisa ao usuário
+    Retorna ao passo 2 do fluxo normal
+\end{enumerate}
 		
 \subsection{UC03 -- Editar Perfil}
 \textbf{Atores:} Usuário \\
 \textbf{Precondições:} O usuário deve estar logado no sistema \\
 \textbf{Descrição:} O usuário modifica informações do seu perfil (e-mail, senha, nome, foto, idade, sexo).
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O usuário aperta em Opções
@@ -182,7 +187,7 @@ Fluxo Normal
 \textbf{Precondições:} Nenhuma \\
 \textbf{Descrição:} O usuário visualiza a lista de statuses postados por outros usuários. Não é necessário estar logado.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O sistema mostra a lista de status ao usuário
@@ -193,7 +198,7 @@ Fluxo Normal
 \textbf{Precondições:} O usuário deve estar logado no sistema \\
 \textbf{Descrição:} O usuário envia um novo status ao sistema para que seja exibido na lista de status. Esse novo status pode ser um dos modelos padrões disponibilizados pelo sistema ou um status customizado.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O usuário aperta em Novo Status
@@ -201,8 +206,7 @@ Fluxo Normal
   \item O usuário aperta em Enviar \\
 \end{enumerate}
 
-Fluxo Alternativo 
-A1.
+\textbf{Fluxo Alternativo A1.} 
 \begin{enumerate}
   \item [4.1] O usuário preenche o campo de texto com um status customizado
   \item [4.2] Continua do passo 4 do fluxo normal
@@ -213,7 +217,7 @@ A1.
 \textbf{Precondições:} O usuário deve estar logado no sistema \\
 \textbf{Descrição:} O usuário envia uma réplica à um status postado por outro usuário.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O usuário acessa o sistema
   \item O usuário aperta no status a ser replicado
@@ -227,9 +231,8 @@ Fluxo Normal
 \textbf{Precondições:} O administrador deve estar logado no sistema \\
 \textbf{Descrição:} O administrador bloqueia um usuário que infringiu as regras do sistema.
 
-Fluxo Normal
-\begin{enumerate}
-  \item O administrador acessa o sistema
+\textbf{Fluxo Normal}
+\begin{enumerate} \item O administrador acessa o sistema
   \item O administrador acessa a lista de usuários
   \item O administrador seleciona o usuário a ser bloqueado
   \item O administrador aperta em Bloquear
@@ -240,7 +243,7 @@ Fluxo Normal
 \textbf{Precondições:} O administrador deve estar logado no sistema \\
 \textbf{Descrição:} O administrador remove um status que não segue as regras do sistema.
 
-Fluxo Normal
+\textbf{Fluxo Normal}
 \begin{enumerate}
   \item O administrador acessa o sistema
   \item O administrador seleciona o status a ser removido
@@ -256,17 +259,17 @@ black-and-white images, and 150-300 dpi for grayscale images.  Do not include
 images with excessive resolution, as they may take hours to print, without any
 visible difference in the result.
 
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
-
-\bibliographystyle{sbc}
-\bibliography{sbc-template}
+%\section{References}
+%
+%Bibliographic references must be unambiguous and uniform.  We recommend giving
+%the author names references in brackets, e.g. \cite{knuth:84},
+%\cite{boulic:91}, and \cite{smith:99}.
+%
+%The references must be listed using 12 point font size, with 6 points of space
+%before each reference. The first line of each reference should not be
+%indented, while the subsequent should be indented by 0.5 cm.
+%
+%\bibliographystyle{sbc}
+%\bibliography{sbc-template}
 
 \end{document}
