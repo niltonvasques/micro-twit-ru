@@ -7,7 +7,6 @@
 %\usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
 
-
 \sloppy
 
 \title{Especificação do Projeto da Disciplina Laboratório de Programação Web - MATC84\\ Colé de Merma do RU}
@@ -77,53 +76,204 @@ com agilidade os alunos continuam na fila perdendo tempo inutilmente. Além de do
 e poderem, futuramente, cobrar seus direitos perante a Pro-Reitoria responsável, desta vez, contando
 com dados mais palpáveis.
 
-\subsection{Requisitos}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\subsection{Arquitetura}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\subsection{Casos de uso}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
-
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.9\textwidth]{useCases.png}
-\caption{Casos de uso}
-\label{fig:exampleFig1}
+\includegraphics[width=.7\textwidth]{home.png}
+\caption{Esboço da interface do sistema voltado para smarthphones.}
+\label{fig:mobilefig}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:Casos de uso}.}
-\label{fig:exampleFig2}
+\includegraphics[width=.7\textwidth]{mockup.png}
+\caption{Esboço da interface do sistema web.}
+\label{fig:webfig}
 \end{figure}
 
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
+\section{Requisitos}
 
-\begin{table}[ht]
+Requisitos funcionais
+
+\subsection{Cadastrar nova conta}
+Deve ser disponibilizado para novos usuários não autenticados, a possibilidade criação de uma nova conta.
+
+\subsection{Logar no sistema}
+Deve ser disponibilizado uma tela de login, onde o usuário possa se autenticar no sistema.
+
+\subsection{Editar perfil}
+Deve ser possível a um usuário logado no sistema, a possibilidade de editar seu próprio perfil.
+
+\subsection{Informar status do RU}
+Deve estar disponível para um usuário logado a possibilidade de informar um novo status do RU, dentre os listados na lista abaixo. 
+
+\begin{enumerate}
+
+  \item Fila
+  \begin{enumerate}
+    \item Fila grande
+    \item Fila pequena
+  \end{enumerate}
+  \item Fichas
+  \begin{enumerate}
+    \item Fichas acabaram
+  \end{enumerate}
+  \item Cardápio
+  \begin{enumerate}
+    \item Comida Muito Boa
+    \item Comida razoável
+    \item "Só tem Soja viu bem?"
+    \item "Peixe"
+    \item "Fígado"
+    \item "Charutinho de soja"
+    \item Contém anomalias.
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection{Visualizar status do RU}
+Deve estar disponível para um usuário logado a possibilidade de visualizar os status informados pelos demais usuários do sistema. 
+
+\subsection{Replicar status de outro usuário}
+O usuário deve ser capaz de replicar o status informado por outro usuário, reforçando assim a relevância daquele status no sistema.
+
+\newpage
+\section{Arquitetura}
+
+A arquitetura do sistema é divida em três camadas (fig.\ref{fig:arqfig}). Sendo a responsabilidade da primeira camada, a gerência da lógica da interface. A segunda é a camada de business, que 
+contém as regras de negócio das funcionalidades do sistema. E por fim, temos a camada persitance, que atua como intermediário entre a aplicação e a base de dados.
+
+\begin{figure}[ht]
 \centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\includegraphics[width=.7\textwidth]{table.jpg}
-\end{table}
+\includegraphics[width=.7\textwidth]{arquitetura.png}
+\caption{Arquitetura em três camadas do sistema.}
+\label{fig:arqfig}
+\end{figure}
+
+\section{Casos de uso}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.7\textwidth]{useCases.png}
+  \caption{Diagrama dos casos de uso.}
+  \label{fig:usecasesfig}
+\end{figure}
+
+\subsection{UC01 -- Cadastrar-se}
+\textbf{Atores:} Usuário \\
+\textbf{Precondições:} O usuário deve possuir um e-mail \\
+\textbf{Descrição:} O usuário se cadastra no sistema para poder utilizá-lo plenamente.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O usuário clica em cadastrar-se
+  \item O usuário preenche os campos solicitados pelo sistema
+  \item O usuário aperta em ok
+\end{enumerate}
+
+\subsection{UC02 -- Fazer Login}
+\textbf{Atores:} Usuário, Administrador \\
+\textbf{Precondições:} O usuário deve possuir cadastro no sistema \\
+\textbf{Descrição:} O usuário faz login com o seu cadastro no sistema, para poder utilizá-lo plenamente.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O usuário aperta em Entrar
+  \item O usuário preenche os campos de e-mail e senha
+  \item O usuário aperta em Login
+
+\end{enumerate}
+
+
+\textbf{Fluxo de Excessão E1.}
+\begin{enumerate}
+  \item [4.1] Sistema reconhece as informações como inválidas e avisa ao usuário
+    Retorna ao passo 2 do fluxo normal
+\end{enumerate}
+		
+\subsection{UC03 -- Editar Perfil}
+\textbf{Atores:} Usuário \\
+\textbf{Precondições:} O usuário deve estar logado no sistema \\
+\textbf{Descrição:} O usuário modifica informações do seu perfil (e-mail, senha, nome, foto, idade, sexo).
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O usuário aperta em Opções
+  \item O usuário aperta em Editar Perfil
+  \item O usuário preenche os campos com as novas informações
+  \item O usuário aperta em Salvar
+\end{enumerate}
+
+\subsection{UC04 -- Visualizar Statuses}
+\textbf{Atores:} Usuário, Administrador \\
+\textbf{Precondições:} Nenhuma \\
+\textbf{Descrição:} O usuário visualiza a lista de statuses postados por outros usuários. Não é necessário estar logado.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O sistema mostra a lista de status ao usuário
+\end{enumerate}
+
+\subsection{UC05 -- Postar Novo Status}
+\textbf{Atores:} Usuário \\
+\textbf{Precondições:} O usuário deve estar logado no sistema \\
+\textbf{Descrição:} O usuário envia um novo status ao sistema para que seja exibido na lista de status. Esse novo status pode ser um dos modelos padrões disponibilizados pelo sistema ou um status customizado.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O usuário aperta em Novo Status
+  \item O usuário seleciona um dos statuses padrões
+  \item O usuário aperta em Enviar \\
+\end{enumerate}
+
+\textbf{Fluxo Alternativo A1.} 
+\begin{enumerate}
+  \item [4.1] O usuário preenche o campo de texto com um status customizado
+  \item [4.2] Continua do passo 4 do fluxo normal
+\end{enumerate}
+
+\subsection{UC06 -- Replicar Status}
+\textbf{Atores:} Usuário \\
+\textbf{Precondições:} O usuário deve estar logado no sistema \\
+\textbf{Descrição:} O usuário envia uma réplica à um status postado por outro usuário.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O usuário acessa o sistema
+  \item O usuário aperta no status a ser replicado
+  \item O usuário aperta em Reply
+  \item O usuário digita a sua réplica
+  \item O usuário aperta em Enviar
+\end{enumerate}
+
+\subsection{UC07 -- Bloquear um Usuário}
+\textbf{Atores:} Administrador \\
+\textbf{Precondições:} O administrador deve estar logado no sistema \\
+\textbf{Descrição:} O administrador bloqueia um usuário que infringiu as regras do sistema.
+
+\textbf{Fluxo Normal}
+\begin{enumerate} \item O administrador acessa o sistema
+  \item O administrador acessa a lista de usuários
+  \item O administrador seleciona o usuário a ser bloqueado
+  \item O administrador aperta em Bloquear
+\end{enumerate}
+
+\subsection{UC08 -- Remover um Status}
+\textbf{Atores:} Administrador \\
+\textbf{Precondições:} O administrador deve estar logado no sistema \\
+\textbf{Descrição:} O administrador remove um status que não segue as regras do sistema.
+
+\textbf{Fluxo Normal}
+\begin{enumerate}
+  \item O administrador acessa o sistema
+  \item O administrador seleciona o status a ser removido
+  \item O administrador aperta em Apagar
+\end{enumerate}
+
 
 \section{Conclusão}
 
@@ -134,17 +284,17 @@ black-and-white images, and 150-300 dpi for grayscale images.  Do not include
 images with excessive resolution, as they may take hours to print, without any
 visible difference in the result.
 
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
-
-\bibliographystyle{sbc}
-\bibliography{sbc-template}
+%\section{References}
+%
+%Bibliographic references must be unambiguous and uniform.  We recommend giving
+%the author names references in brackets, e.g. \cite{knuth:84},
+%\cite{boulic:91}, and \cite{smith:99}.
+%
+%The references must be listed using 12 point font size, with 6 points of space
+%before each reference. The first line of each reference should not be
+%indented, while the subsequent should be indented by 0.5 cm.
+%
+%\bibliographystyle{sbc}
+%\bibliography{sbc-template}
 
 \end{document}
