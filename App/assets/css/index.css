@@ -1,0 +1,50 @@
+
+
+    .header-main{
+        margin-top:0;
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-color: #9F9F9F;
+        font-size: 25px;
+    }
+
+            #text-content{
+                font-size: 20px;
+            }
+            #icon-min{
+                font-size: 10px;
+                padding-bottom: 10px;
+            }
+
+.footer-background{
+    width: 130%;
+    height: 40px;
+    margin-left: -15%;
+    position: absolute;
+    bottom: 0;
+    background-color: #9F9F9F
+}
+/*
+
+glyphicon glyphicon-thumbs-up
+glyphicon glyphicon-thumbs-down
+glyphicon glyphicon-retweet
+
+glyphicon glyphicon-refresh
+
+glyphicon glyphicon-send
+glyphicon glyphicon-user
+glyphicon glyphicon-home
+
+glyphicon glyphicon-share
+glyphicon glyphicon-off
+[glyphicon glyphicon-map-marker] [can be]
+
+
+for screen readers:
+aria-label="Icon Name" or
+aria-hidden="true"
+
+
+ */
