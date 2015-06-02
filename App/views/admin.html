@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/statuses.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../vendors/bootstrap/js/bootstrap.js"></script>
+    <title>Home - Colé de merma RU</title>
+</head>
+<body>
+    <header>
+      <div>
+        <p class="header-text">
+          Colé de Merma do RU
+          <a class="header-logout" href="">Logout</a>
+        </p>
+      </div>
+    </header>
+
+    <div class="wrapper">
+        <section class="container">
+          <ul class="nav nav-tabs" role="tablist" id="myTab">
+            <li role="presentation" class="active">
+              <a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a>
+            </li>
+            <li role="presentation">
+              <a href="#statuses" aria-controls="statuses" role="tab" data-toggle="tab">Statuses</a>
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="users">
+              <table class="table table-striped table-bordered" id="lista_de_users">
+                <thead id="status_list_header">
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th colspan="2">Status</th>
+                </thead>
+                <tbody id="status_list_body">
+                  <tr>
+                    <td>John Doe</td>
+                    <td>john@doe.com</td>
+                    <td>Active</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        deny
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jane Doe</td>
+                    <td>jane@doe.com</td>
+                    <td>Active</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        deny
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Lorem</td>
+                    <td>lorem@gmail.com</td>
+                    <td>Denied</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        allow 
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ipsum</td>
+                    <td>ipsum@gmail.com</td>
+                    <td>Denied</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        allow 
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="statuses">
+              <table class="table table-striped table-bordered" id="lista_de_statuses">
+                <thead id="status_list_header">
+                  <th>Statuses</th>
+                  <th>Owner</th>
+                  <th colspan="2">Status</th>
+                </thead>
+                <tbody id="status_list_body">
+                  <tr>
+                    <td>Status 1</td>
+                    <td>John Doe</td>
+                    <td>Active</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        deny
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status 2</td>
+                    <td>Jane Doe</td>
+                    <td>Active</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        deny
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status 3</td>
+                    <td>Lorem</td>
+                    <td>Denied</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        allow 
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status 4</td>
+                    <td>Ipsum</td>
+                    <td>Denied</td>
+                    <td>
+                      <button type="submit" class="btn btn-default">
+                        allow 
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+    </div>
+
+    <footer class="text-center">
+    </footer>
+</body>
+</html>
