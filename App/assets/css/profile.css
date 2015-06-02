@@ -1,0 +1,31 @@
+.header-main{
+    margin-top:0;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #9F9F9F;
+    font-size: 20px;
+}
+
+.content-main{
+    padding-top: 40px;
+}
+
+        .button{
+            text-align: center;
+        }
+
+.footer-menu{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #9F9F9F;
+    font-size:25px;
+}
+
+    .icon-menu{
+        text-align: center;
+    }
+        .icon-style{
+            color: #555;
+        }

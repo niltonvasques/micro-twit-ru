@@ -1,0 +1,41 @@
+.main-icon{
+    font-size: 30px;
+}
+.txt-center{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+    .another-icon{
+        font-size: 10px;
+        vertical-align: top;
+    }
+.btn-pdg{
+    padding-top: 150px;
+    text-align: center;
+}
+
+
+/*
+
+glyphicon glyphicon-thumbs-up
+glyphicon glyphicon-thumbs-down
+glyphicon glyphicon-retweet
+
+glyphicon glyphicon-refresh
+
+glyphicon glyphicon-send
+glyphicon glyphicon-user
+glyphicon glyphicon-home
+
+glyphicon glyphicon-share
+glyphicon glyphicon-off
+[glyphicon glyphicon-map-marker] [can be]
+
+
+for screen readers:
+aria-label="Icon Name" or
+aria-hidden="true"
+
+
+ */
