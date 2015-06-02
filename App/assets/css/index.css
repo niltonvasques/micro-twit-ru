@@ -1,37 +1,21 @@
-
-
-    .header-main{
-        margin-top:0;
-        text-align: center;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        background-color: #9F9F9F;
-        font-size: 25px;
-    }
-            .main-icon{
-                font-size: 30px;
-            }
-            .txt-center{
-                padding-top: 40px;
-                text-align: center;
-                font-size: 20px;
-            }
-                .another-icon{
-                    font-size: 10px;
-                    vertical-align: top;
-                }
-            .btn-pdg{
-                padding-top: 150px;
-                text-align: center;
-            }
-
-.footer-background{
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    bottom: 0;
-    background-color: #9F9F9F
+.main-icon{
+    font-size: 30px;
 }
+.txt-center{
+    padding-top: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+    .another-icon{
+        font-size: 10px;
+        vertical-align: top;
+    }
+.btn-pdg{
+    padding-top: 150px;
+    text-align: center;
+}
+
+
 /*
 
 glyphicon glyphicon-thumbs-up

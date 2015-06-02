@@ -2,42 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
     <title>Informações</title>
 </head>
 <body>
     <header>
-        <h1 class="header-main">
-            <span class="glyphicon glyphicon-user"></span>
-            Minhas Informações
+        <h1 class="header-text">
+            Colé de Merma do RU
         </h1>
     </header>
-    <section class="container">
-        <div class="col-md-6">
-            <div class="content-main">
+
+    <div class="wrapper">
+        <section class="container">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
+                <h2 class="main-content-title">Minhas Informações</h2>
+
                 <form>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon"></div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </div>
                             <input name="name" type="text" placeholder="Nome" class="form-control"></input>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon"></div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                            </div>
                             <input name="email" type="email" placeholder="E-mail" class="form-control"></input>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon"></div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+                            </div>
                             <input name="course" type="text" placeholder="Curso" class="form-control"></input>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon"></div>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                            </div>
                             <input name="pass" type="password" placeholder="Senha" class="form-control"></input>
                         </div>
                     </div>
@@ -48,18 +60,19 @@
                     </div>
                 </form>
             </div>
+        </section>
+    </div>
+
+    <footer class="text-center">
+        <div class="col-xs-4">
+            <a class="glyphicon glyphicon-home" href="statuses.html"></a>
         </div>
-    </section>
-    <div class="footer-menu">
-        <div class="col-xs-4 icon-menu">
-            <a class="glyphicon glyphicon-home icon-style" href="statuses.html"></a>
+        <div class="col-xs-4">
+            <a class="glyphicon glyphicon-send" href="newstatus.html"></a>
         </div>
-        <div class="col-xs-4 icon-menu">
-            <a class="glyphicon glyphicon-send icon-style" href="newstatus.html"></a>
+        <div class="col-xs-4">
+            <a class="glyphicon glyphicon-user" href="profile.html"></a>
         </div>
-        <div class="col-xs-4 icon-menu">
-            <a class="glyphicon glyphicon-user icon-style" href="profile.html"></a>
-        </div>
-  </div>
+    </footer>
 </body>
 </html>
