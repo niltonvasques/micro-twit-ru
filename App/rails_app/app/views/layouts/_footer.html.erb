@@ -1,2 +1,16 @@
-<footer class="footer">
-</footer>
+<% if signed_in? %>
+  <footer class="text-center">
+    <div class="col-xs-4">
+      <a class="glyphicon glyphicon-home" href="statuses.html"></a>
+    </div>
+    <div class="col-xs-4">
+      <a class="glyphicon glyphicon-send" href="newstatus.html"></a>
+    </div>
+    <div class="col-xs-4">
+      <a class="glyphicon glyphicon-user" href="profile.html"></a>
+    </div>
+  </footer>
+<% else %>
+  <footer class="footer">
+  </footer>
+<% end %>

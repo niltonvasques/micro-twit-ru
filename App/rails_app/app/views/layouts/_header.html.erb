@@ -1,6 +1,9 @@
 <header class="navbar navbar-fixed-top">
         <h1 class="header-text">
             Colé de Merma do RU
+            <% if signed_in? %>
+              <%= link_to "Sign out", signout_path, method: "delete" %>
+            <% end %>
         </h1>
 <% if false %>
   <div class="navbar-inner">
@@ -33,5 +36,4 @@
     </div>
   </div>
 <% end %>
-<%= link_to "Sign out", signout_path, method: "delete" %>
 </header>
