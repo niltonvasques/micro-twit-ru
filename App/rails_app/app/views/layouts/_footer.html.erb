@@ -1,13 +1,13 @@
 <% if signed_in? %>
   <footer class="text-center">
     <div class="col-xs-4">
-      <a class="glyphicon glyphicon-home" href="statuses.html"></a>
+      <%= link_to "", root_path, class: "glyphicon glyphicon-home" %>
     </div>
     <div class="col-xs-4">
       <a class="glyphicon glyphicon-send" href="newstatus.html"></a>
     </div>
     <div class="col-xs-4">
-      <a class="glyphicon glyphicon-user" href="profile.html"></a>
+      <%= link_to "", edit_user_path(current_user), class: "glyphicon glyphicon-user" %>
     </div>
   </footer>
 <% else %>
