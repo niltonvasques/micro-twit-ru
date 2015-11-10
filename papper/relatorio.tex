@@ -4,18 +4,20 @@
 
 \usepackage{graphicx,url}
 
-%\usepackage[brazil]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ucs}
 
 \sloppy
 
-\title{EspecificaÁ„o do Projeto da Disciplina LaboratÛrio de ProgramaÁ„o Web - MATC84\\ ColÈ de Merma do RU}
+\title{Especifica√ß√£o do Projeto da Disciplina Laborat√≥rio de Programa√ß√£o Web - MATC84\\ Col√© de Merma do RU}
 
 \author{Caio N. Lima\inst{1}, Gabriel Erbetta\inst{1}, Marino S. Santos\inst{1}, \\
   Nilton V. C. Junior\inst{1},  Ricardo Nascimento\inst{1}}
 
 
-\address{Departamento de CiÍncia da ComputaÁ„o -- Universidade Federal da Bahia
+\address{Departamento de Ci√™ncia da Computa√ß√£o -- Universidade Federal da Bahia
   (UFBA)\\
   Av. Adhemar de Barros, Ondina -- Salvador -- BA -- Brasil
   \email{\{ticaiolima,gabrielerbetta\}@gmail.com,\{marino,niltonvasques\}@dcc.ufba.br,
@@ -28,64 +30,64 @@
 \maketitle
 
 \begin{abstract}
-  This document describes the specifications of LaboratÛrio de ProgramaÁ„o Web class project.
-  The project intend to solves a problematic, that university community faces in nowadays,
-  in yours most basic rights, the alimentation rights.
+  This document describes the specifications of Laborat√≥rio de Programa√ß√£o Web class project.
+  The project intends to solve a problem that the university community faces nowadays 
+  in one of their most basic rights, alimentation.
 \end{abstract}
 
 \begin{resumo}
-  Este documento descreve as especificaÁıes do projeto da disciplina LaboratÛrio
-  de ProgramaÁ„o Web. O projeto visa desenvolver uma soluÁ„o voltada para a problem·tica
-  vivenciada pela comunidade universit·ria, no seu mais b·sico direito, a alimentaÁ„o.
+  Este documento descreve as especifica√ß√µes do projeto da disciplina Laborat√≥rio
+  de Programa√ß√£o Web. O projeto visa desenvolver uma solu√ß√£o voltada para o problema
+  vivenciado pela comunidade universit√°ria em um dos seus direitos mais b√°sicos, a alimenta√ß√£o.
 \end{resumo}
 
 
-\section{IntroduÁ„o}
+\section{Introdu√ß√£o}
 
-No cotidiano da Universidade Federal da Bahia, a comunidade universit·ria
+No cotidiano da Universidade Federal da Bahia, a comunidade universit√°ria
 enfrente hoje dificuldades relacionadas ao
-uso do restaurante universit·rio. Como a baixa qualidade da alimentaÁ„o,
-pouca disponibilidade de fichas, alÈm de um card·pio que n„o agrada a comunidade
-e que eventualmente contÈm "anomalias".
+uso do restaurante universit√°rio. Como a baixa qualidade da alimenta√ß√£o,
+pouca disponibilidade de fichas, al√©m de um card√°pio que n√£o agrada a comunidade
+e que eventualmente cont√©m ``anomalias".
 
-Portanto, este trabalho tem como objetivo a criaÁ„o de uma rede social colaborativa,
-para propiciar ‡ comunidade acadÍmica, uma meio de comunicaÁ„o r·pida, a respeito dos
-eventos di·rios no restaurante universit·rio.
+Portanto, este trabalho tem como objetivo a cria√ß√£o de uma rede social colaborativa,
+para propiciar √† comunidade acad√™mica, um meio de comunica√ß√£o r√°pida, a respeito dos
+eventos di√°rios no restaurante universit√°rio.
 
 
 
 \section{Sistema Proposto} \label{sec:firstpage}
 
-O sistema consiste numa aplicaÁ„o mobile com intuito de prover r·pidos feedbacks em relaÁ„o
-aos eventos que diz respeito ao Restaurante Universit·rio da UFBA (RU). Um usu·rio poder·,
-apÛs efetuado o login com as suas credenciais devidamente cadastradas, postar um determinado
-status relacionado ao RU, vizualizar statuses de outros usu·rios e replicar um status.
+O sistema consiste numa aplica√ß√£o mobile com intuito de prover r√°pidos feedbacks em rela√ß√£o
+aos eventos que diz respeito ao Restaurante Universit√°rio da UFBA (RU). Um usu√°rio poder√°,
+ap√≥s efetuado o login com as suas credenciais devidamente cadastradas, postar um determinado
+status relacionado ao RU, vizualizar statuses de outros usu√°rios e replicar um status.
 
-Quando um usu·rio for informar um status dever· selecionar· um post pronto de uma lista de possÌveis
-statuses, separados por categoria: Fila, Fichas ou Card·pio. … sabido que os statuses possÌves n„o
-conseguir„o, j· na sua primeira vers„o, englobar todas as possibilidades, mas estas brechas
-ser„o sanadas a medida que a aplicaÁ„o for mais usada e conseguirmos coletar mais insumos que
-espelhem melhor a realidade e a necessidade dos usu·rios. ApÛs um status ser postado, este poder·
-ser visualizado por outros usu·rios, que poder„o replic·-lo ou n„o para garantir a credibilidade
-da informaÁ„o.
+Quando um usu√°rio for informar um status, este dever√° selecionar um post pronto a partir de uma lista de posts, 
+separados por categoria: Fila, Fichas ou Card√°pio. √â sabido que os statuses poss√≠ves n√£o
+conseguir√£o, j√° na sua primeira vers√£o, englobar todas as possibilidades, mas estas brechas
+ser√£o sanadas a medida que a aplica√ß√£o for mais usada e conseguirmos coletar mais insumos que
+espelhem melhor a realidade e a necessidade dos usu√°rios. Ap√≥s um status ser postado, este poder√°
+ser visualizado por outros usu√°rios, que poder√£o replic√°-lo ou n√£o para garantir a credibilidade
+da informa√ß√£o.
 
-Contando com estas informaÁıes fornecidas pelos prÛprios usu·rios, estes poder„o tomar uma decis„o
-mais r·pida em relaÁ„o ao RU, como no caso em que as fichas acabam cedo, e por n„o ter este feedback
-com agilidade os alunos continuam na fila perdendo tempo inutilmente. AlÈm de documentar estes eventos
-e poderem, futuramente, cobrar seus direitos perante a Pro-Reitoria respons·vel, desta vez, contando
-com dados mais palp·veis.
+Contando com estas informa√ß√µes fornecidas pelos pr√≥prios usu√°rios, estes poder√£o tomar uma decis√£o
+mais r√°pida em rela√ß√£o ao RU, como no caso em que as fichas acabam cedo, e por n√£o ter este feedback
+com agilidade os alunos continuam na fila perdendo tempo inutilmente. Al√©m de documentar estes eventos
+e poderem, futuramente, cobrar seus direitos perante a Pro-Reitoria respons√°vel, desta vez, contando
+com dados mais palp√°veis.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.7\textwidth]{home.png}
-\caption{EsboÁo da interface do sistema voltado para smarthphones.}
+\includegraphics[width=.7\textwidth]{assets/img/home.png}
+\caption{Esbo√ßo da interface do sistema voltado para smarthphones.}
 \label{fig:mobilefig}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.7\textwidth]{mockup.png}
-\caption{EsboÁo da interface do sistema web.}
+\includegraphics[width=.7\textwidth]{assets/img/mockup.png}
+\caption{Esbo√ßo da interface do sistema web.}
 \label{fig:webfig}
 \end{figure}
 
@@ -95,16 +97,16 @@ com dados mais palp·veis.
 Requisitos funcionais
 
 \subsection{Cadastrar nova conta}
-Deve ser disponibilizado para novos usu·rios n„o autenticados, a possibilidade criaÁ„o de uma nova conta.
+Deve ser disponibilizado para novos usu√°rios n√£o autenticados, a possibilidade cria√ß√£o de uma nova conta.
 
 \subsection{Logar no sistema}
-Deve ser disponibilizado uma tela de login, onde o usu·rio possa se autenticar no sistema.
+Deve ser disponibilizado uma tela de login, onde o usu√°rio possa se autenticar no sistema.
 
 \subsection{Editar perfil}
-Deve ser possÌvel a um usu·rio logado no sistema, a possibilidade de editar seu prÛprio perfil.
+Deve ser poss√≠vel a um usu√°rio logado no sistema, a possibilidade de editar seu pr√≥prio perfil.
 
 \subsection{Informar status do RU}
-Deve estar disponÌvel para um usu·rio logado a possibilidade de informar um novo status do RU, dentre os listados na lista abaixo.
+Deve estar dispon√≠vel para um usu√°rio logado a possibilidade de informar um novo status do RU, dentre os listados na lista abaixo.
 
 \begin{enumerate}
 
@@ -117,35 +119,35 @@ Deve estar disponÌvel para um usu·rio logado a possibilidade de informar um novo
   \begin{enumerate}
     \item Fichas acabaram
   \end{enumerate}
-  \item Card·pio
+  \item Card√°pio
   \begin{enumerate}
     \item Comida Muito Boa
-    \item Comida razo·vel
-    \item "SÛ tem Soja viu bem?"
-    \item "Peixe"
-    \item "FÌgado"
-    \item "Charutinho de soja"
-    \item ContÈm anomalias.
+    \item Comida razo√°vel
+    \item ``S√≥ tem Soja viu bem?"
+    \item ``Peixe"
+    \item ``F√≠gado"
+    \item ``Charutinho de soja"
+    \item Cont√©m anomalias.
   \end{enumerate}
 
 \end{enumerate}
 
 \subsection{Visualizar status do RU}
-Deve estar disponÌvel para um usu·rio logado a possibilidade de visualizar os status informados pelos demais usu·rios do sistema.
+Deve estar dispon√≠vel para um usu√°rio logado a possibilidade de visualizar os status informados pelos demais usu√°rios do sistema.
 
-\subsection{Replicar status de outro usu·rio}
-O usu·rio deve ser capaz de replicar o status informado por outro usu·rio, reforÁando assim a relev‚ncia daquele status no sistema.
+\subsection{Replicar status de outro usu√°rio}
+O usu√°rio deve ser capaz de replicar o status informado por outro usu√°rio, refor√ßando assim a relev√¢ncia daquele status no sistema.
 
 \newpage
 \section{Arquitetura}
 
-A arquitetura do sistema È divida em trÍs camadas (fig.\ref{fig:arqfig}). Sendo a responsabilidade da primeira camada, a gerÍncia da lÛgica da interface. A segunda È a camada de business, que
-contÈm as regras de negÛcio das funcionalidades do sistema. E por fim, temos a camada persitance, que atua como intermedi·rio entre a aplicaÁ„o e a base de dados.
+A arquitetura do sistema √© divida em tr√™s camadas (fig.\ref{fig:arqfig}). Sendo a responsabilidade da primeira camada, a ger√™ncia da l√≥gica da interface. A segunda √© a camada de business, que
+cont√©m as regras de neg√≥cio das funcionalidades do sistema. E por fim, temos a camada persitance, que atua como intermedi√°rio entre a aplica√ß√£o e a base de dados.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.7\textwidth]{arquitetura.png}
-\caption{Arquitetura em trÍs camadas do sistema.}
+\includegraphics[width=.7\textwidth]{assets/img/arquitetura.png}
+\caption{Arquitetura em tr√™s camadas do sistema.}
 \label{fig:arqfig}
 \end{figure}
 
@@ -153,113 +155,113 @@ contÈm as regras de negÛcio das funcionalidades do sistema. E por fim, temos a c
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=.7\textwidth]{useCases.png}
+  \includegraphics[width=.7\textwidth]{assets/img/useCases.png}
   \caption{Diagrama dos casos de uso.}
   \label{fig:usecasesfig}
 \end{figure}
 
 \subsection{UC01 -- Cadastrar-se}
-\textbf{Atores:} Usu·rio \\
-\textbf{PrecondiÁıes:} O usu·rio deve possuir um e-mail \\
-\textbf{DescriÁ„o:} O usu·rio se cadastra no sistema para poder utiliz·-lo plenamente.
+\textbf{Atores:} Usu√°rio \\
+\textbf{Precondi√ß√µes:} O usu√°rio deve possuir um e-mail \\
+\textbf{Descri√ß√£o:} O usu√°rio se cadastra no sistema para poder utiliz√°-lo plenamente.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O usu·rio clica em cadastrar-se
-  \item O usu·rio preenche os campos solicitados pelo sistema
-  \item O usu·rio aperta em ok
+  \item O usu√°rio acessa o sistema
+  \item O usu√°rio clica em cadastrar-se
+  \item O usu√°rio preenche os campos solicitados pelo sistema
+  \item O usu√°rio aperta em ok
 \end{enumerate}
 
 \subsection{UC02 -- Fazer Login}
-\textbf{Atores:} Usu·rio, Administrador \\
-\textbf{PrecondiÁıes:} O usu·rio deve possuir cadastro no sistema \\
-\textbf{DescriÁ„o:} O usu·rio faz login com o seu cadastro no sistema, para poder utiliz·-lo plenamente.
+\textbf{Atores:} Usu√°rio, Administrador \\
+\textbf{Precondi√ß√µes:} O usu√°rio deve possuir cadastro no sistema \\
+\textbf{Descri√ß√£o:} O usu√°rio faz login com o seu cadastro no sistema, para poder utiliz√°-lo plenamente.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O usu·rio aperta em Entrar
-  \item O usu·rio preenche os campos de e-mail e senha
-  \item O usu·rio aperta em Login
+  \item O usu√°rio acessa o sistema
+  \item O usu√°rio aperta em Entrar
+  \item O usu√°rio preenche os campos de e-mail e senha
+  \item O usu√°rio aperta em Login
 
 \end{enumerate}
 
 
-\textbf{Fluxo de Excess„o E1.}
+\textbf{Fluxo de Excess√£o E1.}
 \begin{enumerate}
-  \item [4.1] Sistema reconhece as informaÁıes como inv·lidas e avisa ao usu·rio
+  \item [4.1] Sistema reconhece as informa√ß√µes como inv√°lidas e avisa ao usu√°rio
     Retorna ao passo 2 do fluxo normal
 \end{enumerate}
 
 \subsection{UC03 -- Editar Perfil}
-\textbf{Atores:} Usu·rio \\
-\textbf{PrecondiÁıes:} O usu·rio deve estar logado no sistema \\
-\textbf{DescriÁ„o:} O usu·rio modifica informaÁıes do seu perfil (e-mail, senha, nome, foto, idade, sexo).
+\textbf{Atores:} Usu√°rio \\
+\textbf{Precondi√ß√µes:} O usu√°rio deve estar logado no sistema \\
+\textbf{Descri√ß√£o:} O usu√°rio modifica informa√ß√µes do seu perfil (e-mail, senha, nome, foto, idade, sexo).
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O usu·rio aperta em OpÁıes
-  \item O usu·rio aperta em Editar Perfil
-  \item O usu·rio preenche os campos com as novas informaÁıes
-  \item O usu·rio aperta em Salvar
+  \item O usu√°rio acessa o sistema
+  \item O usu√°rio aperta em Op√ß√µes
+  \item O usu√°rio aperta em Editar Perfil
+  \item O usu√°rio preenche os campos com as novas informa√ß√µes
+  \item O usu√°rio aperta em Salvar
 \end{enumerate}
 
 \subsection{UC04 -- Visualizar Statuses}
-\textbf{Atores:} Usu·rio, Administrador \\
-\textbf{PrecondiÁıes:} Nenhuma \\
-\textbf{DescriÁ„o:} O usu·rio visualiza a lista de statuses postados por outros usu·rios. N„o È necess·rio estar logado.
+\textbf{Atores:} Usu√°rio, Administrador \\
+\textbf{Precondi√ß√µes:} Nenhuma \\
+\textbf{Descri√ß√£o:} O usu√°rio visualiza a lista de statuses postados por outros usu√°rios. N√£o √© necess√°rio estar logado.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O sistema mostra a lista de status ao usu·rio
+  \item O usu√°rio acessa o sistema
+  \item O sistema mostra a lista de status ao usu√°rio
 \end{enumerate}
 
 \subsection{UC05 -- Postar Novo Status}
-\textbf{Atores:} Usu·rio \\
-\textbf{PrecondiÁıes:} O usu·rio deve estar logado no sistema \\
-\textbf{DescriÁ„o:} O usu·rio envia um novo status ao sistema para que seja exibido na lista de status. Esse novo status ser· um dos modelos padrıes disponibilizados pelo sistema.
+\textbf{Atores:} Usu√°rio \\
+\textbf{Precondi√ß√µes:} O usu√°rio deve estar logado no sistema \\
+\textbf{Descri√ß√£o:} O usu√°rio envia um novo status ao sistema para que seja exibido na lista de status. Esse novo status ser√° um dos modelos padr√µes disponibilizados pelo sistema.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O usu·rio aperta em Novo Status
-  \item O usu·rio seleciona um dos statuses padrıes
-  \item O usu·rio aperta em Enviar \\
+  \item O usu√°rio acessa o sistema
+  \item O usu√°rio aperta em Novo Status
+  \item O usu√°rio seleciona um dos statuses padr√µes
+  \item O usu√°rio aperta em Enviar \\
 \end{enumerate}
 
 \subsection{UC06 -- Replicar Status}
-\textbf{Atores:} Usu·rio \\
-\textbf{PrecondiÁıes:} O usu·rio deve estar logado no sistema \\
-\textbf{DescriÁ„o:} O usu·rio envia uma rÈplica ‡ um status postado por outro usu·rio.
+\textbf{Atores:} Usu√°rio \\
+\textbf{Precondi√ß√µes:} O usu√°rio deve estar logado no sistema \\
+\textbf{Descri√ß√£o:} O usu√°rio envia uma r√©plica √† um status postado por outro usu√°rio.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
-  \item O usu·rio acessa o sistema
-  \item O usu·rio aperta no status a ser replicado
-  \item O usu·rio aperta em Reply
-  \item O usu·rio digita a sua rÈplica
-  \item O usu·rio aperta em Enviar
+  \item O usu√°rio acessa o sistema
+  \item O usu√°rio aperta no status a ser replicado
+  \item O usu√°rio aperta em Reply
+  \item O usu√°rio digita a sua r√©plica
+  \item O usu√°rio aperta em Enviar
 \end{enumerate}
 
-\subsection{UC07 -- Bloquear um Usu·rio}
+\subsection{UC07 -- Bloquear um Usu√°rio}
 \textbf{Atores:} Administrador \\
-\textbf{PrecondiÁıes:} O administrador deve estar logado no sistema \\
-\textbf{DescriÁ„o:} O administrador bloqueia um usu·rio que infringiu as regras do sistema.
+\textbf{Precondi√ß√µes:} O administrador deve estar logado no sistema \\
+\textbf{Descri√ß√£o:} O administrador bloqueia um usu√°rio que infringiu as regras do sistema.
 
 \textbf{Fluxo Normal}
 \begin{enumerate} \item O administrador acessa o sistema
-  \item O administrador acessa a lista de usu·rios
-  \item O administrador seleciona o usu·rio a ser bloqueado
+  \item O administrador acessa a lista de usu√°rios
+  \item O administrador seleciona o usu√°rio a ser bloqueado
   \item O administrador aperta em Bloquear
 \end{enumerate}
 
 \subsection{UC08 -- Remover um Status}
 \textbf{Atores:} Administrador \\
-\textbf{PrecondiÁıes:} O administrador deve estar logado no sistema \\
-\textbf{DescriÁ„o:} O administrador remove um status que n„o segue as regras do sistema.
+\textbf{Precondi√ß√µes:} O administrador deve estar logado no sistema \\
+\textbf{Descri√ß√£o:} O administrador remove um status que n√£o segue as regras do sistema.
 
 \textbf{Fluxo Normal}
 \begin{enumerate}
@@ -269,13 +271,27 @@ contÈm as regras de negÛcio das funcionalidades do sistema. E por fim, temos a c
 \end{enumerate}
 
 
-\section{Conclus„o}
+\section{Tecnologias utilizadas}
 
-Portanto temos como finalidade, prover um sistema ·gil capaz de disponibilizar
-r·pidos feedbacks para a comunidade, e pela comunidade. Com a informaÁ„o ‡ m„o de forma mais veloz
-, a tomada de decis„o dos frenquentadores em relaÁ„o ao RU ser· potencializada, permitindo uma
-economia de tempo, comodidade, alÈm de possuir dados reais que espelhem a realidade vivenciada
-pelos estudantes, para atÈ mesmo cobrar, com um argumento mais forte, seus diretos aos respons·veis.
+
+Para auxiliar no desenvolvimento do front-end da aplica√ß√£o, utilizamos o framework Bootstrap. 
+Decidimos us√°-lo para a fim de acelerar o processo de cria√ß√£o de uma interface web responsiva aos
+diferentes tamanhos de tela de dispositivos m√≥veis. 
+
+Para o back-end decidimos utilizar a linguagem de programa√ß√£o Ruby e seu framework para 
+desenvolvimento de aplica√ß√µes web, Rails. Essa escolha foi feita com base no conhecimento e interesse
+dos integrantes do grupo, j√° que alguns possuem experi√™ncia desenvolvendo com essa linguagem e framework e os demais possu√≠am interesse em aprend√©-la.
+
+
+\section{Conclus√£o}
+
+Portanto temos como finalidade, prover um sistema √°gil capaz de disponibilizar
+r√°pidos feedbacks para a comunidade, e pela comunidade. Com a informa√ß√£o √† m√£o de forma mais veloz, 
+a tomada de decis√£o dos frenquentadores em rela√ß√£o ao RU ser√° potencializada, permitindo uma
+economia de tempo, comodidade, al√©m de possuir dados reais que espelhem a realidade vivenciada
+pelos estudantes, para at√© mesmo cobrar, com um argumento mais forte, seus diretos aos respons√°veis.
+Portanto houve a necessidade de se construir uma aplica√ß√£o responsiva que atendesse a necessidade 
+desses usu√°rios mobile.
 
 %\section{References}
 %
