@@ -11,6 +11,7 @@ lorem ipsum sit solor amet.
 * Caio Lima
 * Gabriel Erbeta
 * [Marino Hohenheim](mailto:intmarinoreturn0@gmail.com)
+* Nilton Vasques
 * Ricardo Nsei
 
 ###Contribua com o projeto
