@@ -31,7 +31,7 @@
 
 \begin{abstract}
   This document describes the specifications of Laboratório de Programação Web class project.
-  The project intends to solve a problem that the university community faces nowadays 
+  The project intends to solve a problem that the university community faces nowadays
   in one of their most basic rights, alimentation.
 \end{abstract}
 
@@ -63,7 +63,7 @@ aos eventos que diz respeito ao Restaurante Universitário da UFBA (RU). Um usu�
 após efetuado o login com as suas credenciais devidamente cadastradas, postar um determinado
 status relacionado ao RU, vizualizar statuses de outros usuários e replicar um status.
 
-Quando um usuário for informar um status, este deverá selecionar um post pronto a partir de uma lista de posts, 
+Quando um usuário for informar um status, este deverá selecionar um post pronto a partir de uma lista de posts,
 separados por categoria: Fila, Fichas ou Cardápio. É sabido que os statuses possíves não
 conseguirão, já na sua primeira versão, englobar todas as possibilidades, mas estas brechas
 serão sanadas a medida que a aplicação for mais usada e conseguirmos coletar mais insumos que
@@ -270,15 +270,31 @@ contém as regras de negócio das funcionalidades do sistema. E por fim, temos a
   \item O administrador aperta em Apagar
 \end{enumerate}
 
+\subsection{Diagramas de Atividade}
+
+A figura \ref{fig:activity} mostra os passos que podem ser executados por um usuário comum e um administrador do sistema desde o início da sessão até o fim desta, representado pelas ações \texttt{Login} e \texttt{Logout} em ambos os diagramas.
+
+\begin{figure}[ht]
+% \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=1\textwidth]{assets/img/user-activity-diagram.png}
+    \end{minipage}
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=1.1\textwidth]{assets/img/admin-activity-diagram.png}
+    \end{minipage}
+\label{fig:activity}
+\caption{Diagramas de Atividades do Usuário e Administrador.}
+\end{figure}
+
 
 \section{Tecnologias utilizadas}
 
 
-Para auxiliar no desenvolvimento do front-end da aplicação, utilizamos o framework Bootstrap. 
+Para auxiliar no desenvolvimento do front-end da aplicação, utilizamos o framework Bootstrap.
 Decidimos usá-lo para a fim de acelerar o processo de criação de uma interface web responsiva aos
-diferentes tamanhos de tela de dispositivos móveis. 
+diferentes tamanhos de tela de dispositivos móveis.
 
-Para o back-end decidimos utilizar a linguagem de programação Ruby e seu framework para 
+Para o back-end decidimos utilizar a linguagem de programação Ruby e seu framework para
 desenvolvimento de aplicações web, Rails. Essa escolha foi feita com base no conhecimento e interesse
 dos integrantes do grupo, já que alguns possuem experiência desenvolvendo com essa linguagem e framework e os demais possuíam interesse em aprendé-la.
 
@@ -286,11 +302,11 @@ dos integrantes do grupo, já que alguns possuem experiência desenvolvendo com 
 \section{Conclusão}
 
 Portanto temos como finalidade, prover um sistema ágil capaz de disponibilizar
-rápidos feedbacks para a comunidade, e pela comunidade. Com a informação à mão de forma mais veloz, 
+rápidos feedbacks para a comunidade, e pela comunidade. Com a informação à mão de forma mais veloz,
 a tomada de decisão dos frenquentadores em relação ao RU será potencializada, permitindo uma
 economia de tempo, comodidade, além de possuir dados reais que espelhem a realidade vivenciada
 pelos estudantes, para até mesmo cobrar, com um argumento mais forte, seus diretos aos responsáveis.
-Portanto houve a necessidade de se construir uma aplicação responsiva que atendesse a necessidade 
+Portanto houve a necessidade de se construir uma aplicação responsiva que atendesse a necessidade
 desses usuários mobile.
 
 %\section{References}
