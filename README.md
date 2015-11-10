@@ -10,16 +10,16 @@ lorem ipsum sit solor amet.
 
 * Caio Lima
 * Gabriel Erbeta
-* [Marino Hohenheim](mailto:intmarinoreturn0@gmail.com)
-* Nilton Vasques
-* Ricardo Nsei
+* [Marino Hohenheim](mailto:marino@openmailbox.org)
+* [Nilton Vasques](mailto:niltonvasques@openmailbox.org)
+* Ricardo Nascimento
 
 ###Contribua com o projeto
 
 
 * Fork o projeto
 * Clone em sua máquina o repositório que você acabou de dar fork
-* Adicione o projeto original como upstream: `git remote add  upstream https://github.com/Marinofull/trabalhoLabWeb`
+* Adicione o projeto original como upstream: `git remote add  upstream https://github.com/Marinofull/micro-twit-ru`
 * `git fetch upstream`
 * `git merge upstream/master`
 * Crie uma branch: `git checkout -b your_branch_name`
