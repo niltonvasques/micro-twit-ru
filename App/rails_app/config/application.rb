@@ -29,6 +29,8 @@ module SampleApp
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.assets.digest = true
     config.active_record.raise_in_transactional_callbacks = true
+    config.assets.precompile = config.assets.precompile + %w(*.png *.jpg *.jpeg *.gif *.woff *.ttf *.svg *.eot)
   end
 end
