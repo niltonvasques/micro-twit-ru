@@ -12,7 +12,7 @@ default: &default
 development:
   <<: *default
   database: micro-ru-devdb 
-  host: postgres-container 
+  host: 172.17.0.7 
   username: postgres 
   password: micro-ru-pwd 
 
