@@ -11,7 +11,7 @@ lorem ipsum sit solor amet.
 * Caio Lima
 * Gabriel Erbeta
 * [Marino Hohenheim](mailto:marino@openmailbox.org)
-* [Nilton Vasques](mailto:niltonvasques@openmailbox.org)
+* [Nilton Vasques](mailto:nilton.vasques@openmailbox.org)
 * Ricardo Nascimento
 
 ###Contribua com o projeto

@@ -11,21 +11,21 @@ default: &default
 
 development:
   <<: *default
-  database: sample-app-db 
-  host: 172.17.0.1 
+  database: micro-ru-devdb 
+  host: postgres-container 
   username: postgres 
-  password: rails
+  password: micro-ru-pwd 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: sample-app-test-db 
-  host: localhost
-  username: rails 
-  password: rails
+  database: micro-ru-testdb 
+  host: postgres-container 
+  username: postgres 
+  password: micro-ru-pwd 
 
 production:
   <<: *default
-  database: sample-app-db 
+  database: micro-ru-proddb 
