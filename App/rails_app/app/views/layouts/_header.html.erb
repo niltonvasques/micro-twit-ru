@@ -1,4 +1,10 @@
-<header class="navbar navbar-fixed-top">
+<header class="header-text navbar navbar-fixed-top">
+    <h1 class="header-text glyphicon glyphicon-<%= yield :glyph %>">
+      <%= yield :title %>
+      <%= link_to_if(signed_in?, "", signout_path, method: "delete", class: "glyphicon glyphicon-off") %>
+    </h1>
+<% if false %>
+<!-- to newstatus use privide :glyph=send and the apropriate title -->
           <h1 class="header-text glyphicon glyphicon-user">
             <%= yield(:header) %>
               <% if signed_in? %>
@@ -9,7 +15,6 @@
               <% end %>
           </h1>
 
-<% if false %>
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "sample app", root_path, id: "logo" %>
