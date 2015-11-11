@@ -1,8 +1,8 @@
 <header class="header-text navbar navbar-fixed-top">
     <h1 class="header-text glyphicon glyphicon-<%= yield :glyph %>">
       <%= yield :title %>
-      <%= link_to_if(signed_in?, "", signout_path, method: "delete", class: "glyphicon glyphicon-off") %>
     </h1>
+      <%= link_to_if(signed_in?, "", signout_path, method: "delete", class: "header-logout glyphicon glyphicon-off") %>
 <% if false %>
 <!-- to newstatus use privide :glyph=send and the apropriate title -->
           <h1 class="header-text glyphicon glyphicon-user">
