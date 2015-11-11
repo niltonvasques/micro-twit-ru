@@ -1,0 +1,6 @@
+<h1 class="header-text glyphicon glyphicon-user">
+  <%= yield(:header) %>
+    <span class="glyphicon glyphicon-off">
+      <%= link_to " o",  signout_path, method: "delete" %>
+    </span>
+</h1>

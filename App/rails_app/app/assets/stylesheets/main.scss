@@ -6,7 +6,7 @@ html, body {
 }
 
 	/* HEADER */
-	
+
 	header {
 		height: 60px;
 		background-color: #9F9F9F;
@@ -15,21 +15,19 @@ html, body {
 
 		.header-text {
 		    margin: 0;
+		    padding-left: 4px;
 		    text-align: center;
 		    font-size: 30px;
 		    line-height: 60px;
-		   	font-family: "Coming Soon", sans-serif;
-		   	font-weight: bold;
 		}
 
 		.header-logout {
 		    margin: 0;
-                    margin-right: 20px;
+            margin-right: 20px;
 		    text-align: right;
-                    float: right;
+            float: right;
 		    font-size: 16px;
 		    line-height: 60px;
-		   	font-family: "Coming Soon", sans-serif;
 		   	font-weight: bold;
 		}
 
