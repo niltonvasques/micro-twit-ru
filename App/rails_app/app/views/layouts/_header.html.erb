@@ -4,7 +4,7 @@
     </h1>
       <%= link_to_if(signed_in?, "", signout_path, method: "delete", class: "header-logout glyphicon glyphicon-off") %>
 <% if false %>
-<!-- to newstatus use privide :glyph=send and the apropriate title -->
+<!-- to newstatus use provide :glyph=send and the apropriate title -->
           <h1 class="header-text glyphicon glyphicon-user">
             <%= yield(:header) %>
               <% if signed_in? %>
