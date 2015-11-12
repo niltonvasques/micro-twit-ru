@@ -1,7 +1,18 @@
-<li>
-  <%= gravatar_for user, size: 52 %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete, confirm: "You sure?"  %>
+<tr>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <% if user.active? %>
+    <td>Ativo</td>
+  <% else %>
+    <td>Inativo</td>
   <% end %>
-</li>
+  <td>
+    <% unless user.admin? %>
+      <% if user.active? %>
+        <%= link_to "deny", deny_user_path(user), method: :post, confirm: "Você tem certeza?", class: "btn btn-default"  %>
+      <% else %>
+        <%= link_to "allow", allow_user_path(user), method: :post, confirm: "Você tem certeza?", class: "btn btn-default" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

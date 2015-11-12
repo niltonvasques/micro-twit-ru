@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_filter :signed_in_user, 
+    only: [:index, :edit, :update, :destroy, :following, :followers, :allow, :deny]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: :destroy
+  before_filter :admin_user, only: [:destroy, :index, :allow, :deny]
   before_filter :block_signed_create, only: [:new, :create]
 
   def new
@@ -12,8 +13,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      flash[:success] = "Bem vindo ao Colé de Merma do RU!"
+      redirect_to root_path
     else
       render 'new' end
   end
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.page(params[:page])
+    @microposts = Micropost.all.page(params[:page])
   end
 
   def edit
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Perfil atualizado."
       sign_in @user
       redirect_to @user
     else
@@ -58,6 +60,23 @@ class UsersController < ApplicationController
     @user   = User.find(params[:id])
     @users  = @user.followers.page(params[:page])
     render 'show_follow'
+  end
+
+  def allow 
+    User.find(params[:id]).allow
+    flash[:success] = "Usuário ativado"
+    redirect_to users_path
+  end
+
+  def deny 
+    user = User.find(params[:id])
+    unless user.admin?
+      user.deny
+      flash[:success] = "Usuário inativado."
+    else
+      flash[:error] = "Não é possível desativar um administrador."
+    end
+    redirect_to users_path
   end
 
   def user_params

@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :following, :followers
+      post :allow, :deny
+    end
+  end
+  resources :microposts do
+    member do
+      post :allow, :deny
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
@@ -10,6 +16,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get '/admin', to: 'users#index'
   get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'

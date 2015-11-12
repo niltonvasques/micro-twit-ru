@@ -1,0 +1,16 @@
+<tr>
+  <td><%= micropost_admin.content %></td>
+  <td><%= micropost_admin.user.name %></td>
+  <% if micropost_admin.active? %>
+    <td>Ativo</td>
+  <% else %>
+    <td>Inativo</td>
+  <% end %>
+  <td>
+    <% if micropost_admin.active? %>
+      <%= link_to "deny", deny_micropost_path(micropost_admin), method: :post, confirm: "Você tem certeza?", class: "btn btn-default"  %>
+    <% else %>
+      <%= link_to "allow", allow_micropost_path(micropost_admin), method: :post, confirm: "Você tem certeza?", class: "btn btn-default" %>
+    <% end %>
+  </td>
+</tr>
