@@ -11,7 +11,7 @@
       <% if user.active? %>
         <%= link_to "deny", deny_user_path(user), method: :post, confirm: "Você tem certeza?", class: "btn btn-default"  %>
       <% else %>
-        <%= link_to "allow", allow_user_path(user), method: :post, confirm: "Você tem certeza??", class: "btn btn-default" %>
+        <%= link_to "allow", allow_user_path(user), method: :post, confirm: "Você tem certeza?", class: "btn btn-default" %>
       <% end %>
     <% end %>
   </td>
