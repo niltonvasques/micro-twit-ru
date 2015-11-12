@@ -15,6 +15,7 @@ class Micropost < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  validates :retweets, length: { minimum: 0 }
 
   default_scope { order(created_at: :desc) }
 
@@ -32,6 +33,17 @@ class Micropost < ActiveRecord::Base
   def allow
     self.active = true 
     self.save
+  end
+
+  def retweet(user)
+    p = user.microposts.new
+    p.content = self.content
+    if p.save
+      self.retweets += 1
+      self.save
+    else
+      false
+    end
   end
 end
 
