@@ -17,6 +17,7 @@ class Micropost < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  validates :retweets, length: { minimum: 0 }
 
   validates :likes, length: { minimum: 0 }
   validates :dislikes, length: { minimum: 0 }
@@ -43,13 +44,13 @@ class Micropost < ActiveRecord::Base
   def like(user)
     if self.likes_from_users.where(user_id: user.id).empty?
       self.likes_from_users.create!(user_id: user.id)
-      self.likes += 1 
+      self.likes += 1
     else
       self.likes_from_users.where(user_id: user.id).first.destroy!
       self.likes -= 1 
     end
     self.save
-  end 
+  end
 
   def dislike(user)
     if self.dislikes_from_users.where(user_id: user.id).empty?
@@ -60,6 +61,17 @@ class Micropost < ActiveRecord::Base
       self.dislikes -= 1 
     end
     self.save
+  end
+  
+  def retweet(user)
+    p = user.microposts.new
+    p.content = self.content
+    if p.save
+      self.retweets += 1
+      self.save
+    else
+      false
+    end
   end
 end
 

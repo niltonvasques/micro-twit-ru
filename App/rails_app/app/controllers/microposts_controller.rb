@@ -33,6 +33,21 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def retweet
+    t = Micropost.find params[:id]
+
+    unless t.user == current_user
+      if t.retweet(current_user)
+        flash[:success] = "Micropost replicado!"
+      else
+        flash[:error] = "Erro ao replicar micropost!"
+      end
+    else
+        flash[:error] = "Não é possível replicar seu próprio micropost!"
+    end
+    redirect_to root_path 
+  end
+
   def destroy
     @micropost.destroy
     redirect_back_or root_path

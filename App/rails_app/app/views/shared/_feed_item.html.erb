@@ -29,8 +29,13 @@
       <!-- <span class="action-name">n</span> -->
     </div>
     <div class="col-xs-4 status-action">
-      <label class="count-action">8</label>
-      <a class="link-action" href=""><span class="glyphicon glyphicon-retweet"></span></a>
+      <label class="count-action"><%= feed_item.retweets %></label>
+      <% if current_user == feed_item.user %>
+        <span class="glyphicon glyphicon-retweet"></span>
+      <% else %>
+        <%= link_to "", retweet_micropost_path(feed_item), method: :post, 
+          confirm: "Você tem certeza?", class: "glyphicon glyphicon-retweet" %>
+      <% end %>
       <!-- <span class="action-name">n</span> -->
     </div>
   </div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :microposts do
     member do
-      post :allow, :deny, :like, :dislike
+      post :allow, :deny, :like, :dislike, :retweet
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
