@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112032812) do
+ActiveRecord::Schema.define(version: 20151112150055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dislikes", force: :cascade do |t|
+    t.integer  "micropost_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "dislikes", ["micropost_id"], name: "index_dislikes_on_micropost_id", using: :btree
+  add_index "dislikes", ["user_id", "micropost_id"], name: "index_dislikes_on_user_id_and_micropost_id", unique: true, using: :btree
+  add_index "dislikes", ["user_id"], name: "index_dislikes_on_user_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "micropost_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "likes", ["micropost_id"], name: "index_likes_on_micropost_id", using: :btree
+  add_index "likes", ["user_id", "micropost_id"], name: "index_likes_on_user_id_and_micropost_id", unique: true, using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "microposts", force: :cascade do |t|
     t.string   "content"
@@ -22,6 +44,8 @@ ActiveRecord::Schema.define(version: 20151112032812) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.boolean  "active",     default: true
+    t.integer  "likes",      default: 0
+    t.integer  "dislikes",   default: 0
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
@@ -57,4 +81,8 @@ ActiveRecord::Schema.define(version: 20151112032812) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
+  add_foreign_key "dislikes", "microposts"
+  add_foreign_key "dislikes", "users"
+  add_foreign_key "likes", "microposts"
+  add_foreign_key "likes", "users"
 end
