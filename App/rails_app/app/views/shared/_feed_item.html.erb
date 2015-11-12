@@ -1,15 +1,38 @@
-<li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-  <span class="user">
-    <%= link_to feed_item.user.name, feed_item.user %>
-  </span>
-  <span class="content">
-    <%= wrap(feed_item.content) %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-  </span>
-  <% if current_user?(feed_item.user) %>
-    <%= render partial: 'shared/delete_micropost', locals: { feed_item: feed_item } %>
-  <% end %>
-</li>
+<div class="col-xs-12 status">
+  <div class="col-xs-12 status-top">
+    <div class="col-xs-4 icon-user">
+      <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+    </div>
+    <div class="col-xs-8 status-content">
+      <div class="status-content-meta">
+        <span class="user-name">
+          <%= link_to feed_item.user.name, feed_item.user %>
+        </span>
+        <span class="elapsed-time">Posted <%= time_ago_in_words(feed_item.created_at) %> ago.</span>
+      </div>
+      <div class="status-content-text">
+        <span>
+          <%= wrap(feed_item.content) %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 status-bottom">
+    <div class="col-xs-4 status-action">
+      <label class="count-action">8</label>
+      <a class="link-action" href=""><span class="glyphicon glyphicon-thumbs-up"></span></a>
+      <!-- <span class="action-name">n</span> -->
+    </div>
+    <div class="col-xs-4 status-action">
+      <label class="count-action">3</label>
+      <a class="link-action" href=""><span class="glyphicon glyphicon-thumbs-down"></span></a>
+      <!-- <span class="action-name">n</span> -->
+    </div>
+    <div class="col-xs-4 status-action">
+      <label class="count-action">8</label>
+      <a class="link-action" href=""><span class="glyphicon glyphicon-retweet"></span></a>
+      <!-- <span class="action-name">n</span> -->
+    </div>
+  </div>
+</div>
+
