@@ -19,13 +19,13 @@
   </div>
   <div class="col-xs-12 status-bottom">
     <div class="col-xs-4 status-action">
-      <label class="count-action">8</label>
-      <a class="link-action" href=""><span class="glyphicon glyphicon-thumbs-up"></span></a>
+      <label class="count-action"><%= feed_item.likes %></label>
+      <%= link_to "", like_micropost_path(feed_item), method: :post, class: "glyphicon glyphicon-thumbs-up"  %>
       <!-- <span class="action-name">n</span> -->
     </div>
     <div class="col-xs-4 status-action">
-      <label class="count-action">3</label>
-      <a class="link-action" href=""><span class="glyphicon glyphicon-thumbs-down"></span></a>
+      <label class="count-action"><%= feed_item.dislikes %></label>
+      <%= link_to "", dislike_micropost_path(feed_item), method: :post, class: "glyphicon glyphicon-thumbs-down"  %>
       <!-- <span class="action-name">n</span> -->
     </div>
     <div class="col-xs-4 status-action">
