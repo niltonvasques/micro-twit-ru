@@ -50,6 +50,24 @@ class User < ActiveRecord::Base
     relationships.find_by_followed_id(other_user.id).destroy
   end
 
+  def deny
+    # Usei raw sql por causa da restrição de alteração do has_secure_password
+    ActiveRecord::Base.connection.execute("UPDATE users SET active = false WHERE id = #{self.id}")
+  end
+
+  def allow
+    # Usei raw sql por causa da restrição de alteração do has_secure_password
+    ActiveRecord::Base.connection.execute("UPDATE users SET active = true WHERE id = #{self.id}")
+  end
+
+  def authenticate(unencrypted_password)
+    if self.active?
+      super(unencrypted_password)
+    else
+      false
+    end
+  end
+
   private
     
     def create_remember_token

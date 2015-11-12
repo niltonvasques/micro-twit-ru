@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_filter :signed_in_user, 
+    only: [:index, :edit, :update, :destroy, :following, :followers, :allow, :deny]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: [:destroy, :index]
+  before_filter :admin_user, only: [:destroy, :index, :allow, :deny]
   before_filter :block_signed_create, only: [:new, :create]
 
   def new
@@ -59,6 +60,23 @@ class UsersController < ApplicationController
     @user   = User.find(params[:id])
     @users  = @user.followers.page(params[:page])
     render 'show_follow'
+  end
+
+  def allow 
+    User.find(params[:id]).allow
+    flash[:success] = "Usuário ativado"
+    redirect_to users_path
+  end
+
+  def deny 
+    user = User.find(params[:id])
+    unless user.admin?
+      user.deny
+      flash[:success] = "Usuário inativado."
+    else
+      flash[:error] = "Não é possível desativar um administrador."
+    end
+    redirect_to users_path
   end
 
   def user_params

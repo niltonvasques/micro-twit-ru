@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_back_or user
     else
-      flash.now[:error] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:error] = 'Combinação inválida de email/senha' # Not quite right!
       render 'new'
     end
   end
@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
   private
 
     def signed
-      redirect_to root_path, notice: "You are already signed-in." if signed_in?
+      redirect_to root_path, notice: "Você já está logado." if signed_in?
     end
 end
