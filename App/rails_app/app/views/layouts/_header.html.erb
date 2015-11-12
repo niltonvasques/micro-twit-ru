@@ -1,11 +1,20 @@
-<header class="navbar navbar-fixed-top">
-        <h1 class="header-text">
-            Colé de Merma do RU
-            <% if signed_in? %>
-              <%= link_to "Sign out", signout_path, method: "delete" %>
-            <% end %>
-        </h1>
+<header class="header-text navbar navbar-fixed-top">
+    <h1 class="header-text glyphicon glyphicon-<%= yield :glyph %>">
+      <%= yield :title %>
+    </h1>
+      <%= link_to_if(signed_in?, "", signout_path, method: "delete", class: "header-logout glyphicon glyphicon-off") %>
 <% if false %>
+<!-- to newstatus use privide :glyph=send and the apropriate title -->
+          <h1 class="header-text glyphicon glyphicon-user">
+            <%= yield(:header) %>
+              <% if signed_in? %>
+                <% if false %>
+                    <span class="glyphicon glyphicon-off"></span>
+                <% end %>
+                <%= link_to " o",  signout_path, method: "delete" %>
+              <% end %>
+          </h1>
+
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "sample app", root_path, id: "logo" %>
