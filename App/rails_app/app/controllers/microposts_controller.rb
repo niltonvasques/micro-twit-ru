@@ -3,6 +3,10 @@ class MicropostsController < ApplicationController
   before_filter :correct_user, only: :destroy
   before_filter :admin_user, only: [:allow, :deny]
 
+  def new
+    @tweets = PreDefinedTweet.all
+  end
+
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
@@ -11,6 +15,21 @@ class MicropostsController < ApplicationController
     else
       @feed_items = []
       render 'static_pages/home' 
+    end
+  end
+
+  def post_tweet
+    t = PreDefinedTweet.find params[:tweet_id]
+
+    p = current_user.microposts.new
+    p.content = t.content
+
+    if p.save
+      flash[:success] = "Micropost criado!"
+      redirect_to root_path
+    else
+      flash[:error] = "Erro ao criar micropost!"
+      redirect_to new_micropost_path
     end
   end
 
