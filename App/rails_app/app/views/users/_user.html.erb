@@ -1,12 +1,18 @@
 <tr>
   <td><%= user.name %></td>
   <td><%= user.email %></td>
-  <td>Active</td>
+  <% if user.active? %>
+    <td>Ativo</td>
+  <% else %>
+    <td>Inativo</td>
+  <% end %>
   <td>
     <% unless user.admin? %>
-      <button type="submit" class="btn btn-default">
-        deny
-      </button>
+      <% if user.active? %>
+        <%= link_to "deny", deny_user_path(user), method: :post, confirm: "You sure?", class: "btn btn-default"  %>
+      <% else %>
+        <%= link_to "allow", allow_user_path(user), method: :post, confirm: "You sure?", class: "btn btn-default" %>
+      <% end %>
     <% end %>
   </td>
 </tr>
