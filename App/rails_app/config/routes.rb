@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
   root 'static_pages#home'
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/about',   to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
 
+  post '/create_post/:tweet_id', to: 'microposts#post_tweet', as: 'create_post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

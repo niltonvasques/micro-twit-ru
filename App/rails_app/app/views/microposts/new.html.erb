@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <section class="container">
+    <div class="col-md-12">
+      <div class="">
+        <% @tweets.each do |t| %>
+          <%= form_tag create_post_path(t.id), method: :post, id: "form#{t.id}" do %>
+            <a onclick="clickPost(<%= t.id %>)" class="link-newstatus">
+              <div class="col-xs-4" style="text-align: center">
+                <div class="icon-status">
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                </div>
+                <label class="text-content"><%= t.content %></label>
+              </div>
+            </a>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+function clickPost(postId) {
+  document.getElementById("form" + postId).submit();
+}
+</script>
+
