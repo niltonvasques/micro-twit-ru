@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_back_or user
+      if user.admin?
+        redirect_back_or admin_path 
+      else
+        redirect_back_or root_path 
+      end
     else
       flash.now[:error] = 'Combinação inválida de email/senha' # Not quite right!
       render 'new'
@@ -23,6 +27,12 @@ class SessionsController < ApplicationController
   private
 
     def signed
-      redirect_to root_path, notice: "Você já está logado." if signed_in?
+      if signed_in?
+        if current_user.admin?
+          redirect_to admin_path, notice: "Você já está logado." 
+        else
+          redirect_to root_path, notice: "Você já está logado." 
+        end
+      end
     end
 end

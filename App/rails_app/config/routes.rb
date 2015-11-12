@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get '/admin', to: 'users#index'
   get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
