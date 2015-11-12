@@ -69,6 +69,18 @@ class MicropostsController < ApplicationController
     redirect_to admin_path
   end
 
+  def like 
+    Micropost.find(params[:id]).like(current_user)
+    #flash[:success] = "Post curtido."
+    redirect_to root_path 
+  end
+
+  def dislike 
+    Micropost.find(params[:id]).dislike(current_user)
+    #flash[:success] = "Post descurtido."
+    redirect_to root_path
+  end
+
   private
 
     def correct_user
