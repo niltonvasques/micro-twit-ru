@@ -24,5 +24,14 @@ class Micropost < ActiveRecord::Base
     where("user_id IN (#{followed_user_ids}) OR user_id = :user_id", 
            user_id: user)
   end
+
+  def deny
+    self.active = false
+    self.save
+  end 
+  def allow
+    self.active = true 
+    self.save
+  end
 end
 

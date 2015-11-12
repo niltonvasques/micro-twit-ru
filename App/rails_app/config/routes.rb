@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       post :allow, :deny
     end
   end
+  resources :microposts do
+    member do
+      post :allow, :deny
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
